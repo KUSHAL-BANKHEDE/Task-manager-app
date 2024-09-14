@@ -94,7 +94,7 @@ function Column({ status, tasks, moveTask, deleteTask, updateTask  }) {
 
   return (
     <div ref={drop} className="w-1/3 p-2 bg-gray-200 rounded-md shadow-lg">
-      <h2 className="text-xl bg-blue-500 font-bold mb-4">{status}</h2>
+      <h2 className="text-xl bg-blue-400 text-white px-3 font-bold mb-4">{status}</h2>
       {tasks
         .filter((task) => task.status === status)
         .map((task) => (

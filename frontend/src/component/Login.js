@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { showToast } from "../utils/toastConfig";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test1@email.com");
+  const [password, setPassword] = useState("test1");
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
@@ -20,11 +21,17 @@ export default function Login() {
 
       sessionStorage.setItem("user", JSON.stringify(user));
       sessionStorage.setItem("token", token);
-
+      if (res.status === 200) {
+        showToast("Login successful!")
+      }
+      else{
+        showToast(res.massage,"error")
+      }
       navigate("/dashboard");
     //   if (res.status === 200) {
     //   }
     } catch (err) {
+      showToast("Error login","error");
       setError("Invalid credentials");
     }
   };

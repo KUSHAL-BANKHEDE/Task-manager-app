@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { showToast } from "../utils/toastConfig";
 
 export default function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -33,11 +34,20 @@ export default function Signup() {
 
       sessionStorage.setItem("user", JSON.stringify(user));
       sessionStorage.setItem("token", token);
+        
+      
 
       navigate("/");
-      //   if (res.status === 200) {
-      //   }
+        if (res.stetus===200) {
+          showToast("Signup successful!")
+        }
+        else{
+          showToast(res.massage,"error")
+        }
     } catch (err) {
+         
+      showToast("Error signing up","error");
+
       console.error("Error signing up", err);
     }
   };
