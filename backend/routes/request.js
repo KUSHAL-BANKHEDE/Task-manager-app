@@ -10,7 +10,7 @@ const { Domain } = require('../../frontend/src/utils/constants');
 
 /* GET users listing. */
 router.post('/', async function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", 'http://task-management.kushal-bankhede.live');
+  res.header("Access-Control-Allow-Origin", 'https://task-management.kushal-bankhede.live');
   res.header("Access-Control-Allow-Credentials", 'true');
   res.header("Referrer-Policy","no-referrer-when-downgrade");
   const redirectURL = `https://task-management.kushal-bankhede.live/oauth`;
