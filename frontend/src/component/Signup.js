@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { showToast } from "../utils/toastConfig";
+import { Domain } from "../utils/constants";
+
+
 
 export default function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -19,7 +22,7 @@ export default function Signup() {
     try {
       
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        `${Domain}/api/auth/register`,
         {
           email: email,
           firstName: firstName,

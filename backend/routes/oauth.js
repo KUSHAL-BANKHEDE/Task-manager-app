@@ -23,7 +23,7 @@ router.get('/', async function(req, res, next) {
 
     console.log(code);
     try {
-        const redirectURL = "http://localhost:5000/oauth"
+        const redirectURL = "http://task-management.kushal-bankhede.live/oauth"
         const oAuth2Client = new OAuth2Client(
             process.env.CLIENT_ID,
             process.env.CLIENT_SECRET,
@@ -42,7 +42,7 @@ router.get('/', async function(req, res, next) {
     }
 
 
-    res.redirect(303, 'http://localhost:3001/dashboard');
+    res.redirect(303, 'http://task-management.kushal-bankhede.live/dashboard');
   
 
 

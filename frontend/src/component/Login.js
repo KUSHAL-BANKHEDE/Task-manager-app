@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { showToast } from "../utils/toastConfig";
+import { Domain } from "../utils/constants";
 
 export default function Login() {
   const [email, setEmail] = useState("test1@email.com");
@@ -11,7 +12,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${Domain}/api/auth/login`, {
         email,
         password,
       });
@@ -41,7 +42,7 @@ export default function Login() {
     window.location.href = url;
   }
   async function auth(){
-    const response =await fetch('http://localhost:5000/request',{method:'post'});
+    const response =await fetch(`${Domain}/request`,{method:'post'});
   
     const data = await response.json();
     console.log(data);
