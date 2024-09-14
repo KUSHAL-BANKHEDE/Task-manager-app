@@ -13,8 +13,8 @@ This is a task management application similar to Trello with drag-and-drop funct
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/task-management.git
-   cd task-management
+     git clone https://github.com/KUSHAL-BANKHEDE/Task-manager-app.git
+   cd Task-manager-app
 
 
 2.Install dependencies for the frontend and backend:
@@ -40,11 +40,11 @@ The application can be deployed using Nginx and Certbot for HTTPS. You can find 
 
 ## Features
 
-Drag-and-drop task management
-Google login authentication
-User-specific task boards
-Task categorization
-Real-time updates
+- Drag-and-drop task management
+- Google login authentication
+- User-specific task boards
+- Task categorization
+- Real-time updates
 
 
 
