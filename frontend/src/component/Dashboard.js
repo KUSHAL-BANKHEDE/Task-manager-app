@@ -172,7 +172,7 @@ export default function Dashboard() {
   const deleteTask = async (taskId) => {
     try {
       const token = sessionStorage.getItem("token");
-      await axios.delete(`http://localhost:3000/api/tasks/${taskId}`, {
+      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Filter out the deleted task from the UI
@@ -189,7 +189,7 @@ export default function Dashboard() {
       const token = sessionStorage.getItem("token");
       const updatedTask = { title: updatedTitle, description: updatedDescription };
 
-      await axios.put(`http://localhost:3000/api/tasks/${taskId}`, updatedTask, {
+      await axios.put(`http://localhost:5000/api/tasks/${taskId}`, updatedTask, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -210,7 +210,7 @@ export default function Dashboard() {
     try {
       const token = sessionStorage.getItem("token");
       const updatedTask = { ...task, status: newStatus };
-      await axios.put(`http://localhost:3000/api/tasks/${task._id}`, updatedTask, {
+      await axios.put(`http://localhost:5000/api/tasks/${task._id}`, updatedTask, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

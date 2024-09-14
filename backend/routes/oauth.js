@@ -23,7 +23,7 @@ router.get('/', async function(req, res, next) {
 
     console.log(code);
     try {
-        const redirectURL = "http://localhost:3000/oauth"
+        const redirectURL = "http://localhost:5000/oauth"
         const oAuth2Client = new OAuth2Client(
             process.env.CLIENT_ID,
             process.env.CLIENT_SECRET,
